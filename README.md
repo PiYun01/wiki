@@ -3,9 +3,9 @@
 正在编写中...
 ## Android编码风格
 本文参考[Hawstein翻译的Google Java编程风格指南](http://www.hawstein.com/posts/google-java-style.html)、[Android开源项目-编码风格规范-Code Style Guidelines for Contributors](http://blog.sina.com.cn/s/blog_48d491300100zwzg.html#use-todo-comments)、[最佳实践之Android代码规范](http://www.androidchina.net/2141.html)
-### 命名规范
+### 1 命名规范
 
-#### 文件名命名规范
+#### 1.1 文件名命名规范
 源文件以其最顶层的类名来命名，大小写敏感，文件扩展名为.java。  
 activity的文件：```{名称}Activity``` 例如：```mainActivity.java```
 
@@ -28,7 +28,7 @@ widget layout： ```widget_{名称}``` 例如：```widget_shopping_detail.xml```
 
 包含项布局命名： ```include_{名称}``` 例如：```include_head.xml```
 
-#### 资源ID命名规范
+#### 1.2 资源ID命名规范
 命名模式为：```{view缩写}_{view的逻辑名称}```，如：
 
 顾客管理CRM模块布局 ```LinearLayout``` 的布局id –> ```ll_content```
@@ -51,7 +51,7 @@ widget layout： ```widget_{名称}``` 例如：```widget_shopping_detail.xml```
 | ScrollView        | sv            |
 | WebView           | wv            |
 
-#### Drawable文件命名
+#### 1.3 Drawable文件命名
 
 图标命名：```ic_{名称}``` 例如：```ic_app.png```
 
@@ -65,11 +65,11 @@ widget layout： ```widget_{名称}``` 例如：```widget_shopping_detail.xml```
 
 其他图片命名：```icon_{名称}``` 例如：```icon_blue_circle.png```
 
-#### 包命名规范
+#### 1.4 包命名规范
 采用反域名命名规则，包名全部小写，连续的单词只是简单地连接起来，不使用下划线，一级包名为com，二级包名为xxx（可以是公司域名或者个人命名），三级包名根据应用进行命名，四级包名为模块名或层级名。
 如：````com.zxtcode.activity````
 
-#### 类名规范
+#### 1.5 类名规范
 以大驼峰式命名法(UpperCamelCase)风格编写。
 
 每个单词的第一个字母都大写 如:```XmlHttpRequest```
@@ -78,7 +78,7 @@ widget layout： ```widget_{名称}``` 例如：```widget_shopping_detail.xml```
 
 测试类的命名以它要测试的类的名称开始，以Test结束。例如，HashTest或HashIntegrationTest。
 
-#### 方法名规范
+#### 1.6 方法名规范
 以小驼峰式命名法(lowerCamelCase)风格编写。
 
 除了第一个单词，每个单词的第一个字母都大写 如:
@@ -88,7 +88,7 @@ public void method(){
 }
 ```
 
-#### 常量名规范
+#### 1.7 常量名规范
 常量名命名模式为CONSTANT_CASE，全部字母大写，用下划线分隔单词。那，到底什么算是一个常量？
 
 每个常量都是一个静态final字段，但不是所有静态final字段都是常量。在决定一个字段是否是一个常量时， 考虑它是否真的感觉像是一个常量。例如，如果任何一个该实例的观测状态是可变的，则它几乎肯定不会是一个常量。 只是永远不打算改变对象一般是不够的，它要真的一直不变才能将它示为常量。
@@ -109,7 +109,7 @@ static final Logger logger = Logger.getLogger(MyClass.getName());
 static final String[] nonEmptyArray = {"these", "can", "change"};
 ```
 
-#### 成员变量名规范
+#### 1.8 成员变量名规范
 以小驼峰式命名法(lowerCamelCase)风格编写。
 
 静态成员变量用s开头。例如：
@@ -125,7 +125,7 @@ Model类的私有成员变量不加前缀。例如：
 private String name;
 ```
 
-#### 局部变量名规范
+#### 1.9 局部变量名规范
 以小驼峰式命名法(lowerCamelCase)风格编写。
 
 除了第一个单词，每个单词的第一个字母都大写 如:
@@ -133,15 +133,15 @@ private String name;
 String name = "a";
 int id = 1;
 ```
-###具体结构
+### 2 具体结构
 
-#### Modifiers
+#### 2.1 Modifiers
 类和成员的modifiers如果存在，则按Java语言规范中推荐的顺序出现。
 ```java
 public protected private abstract static final transient volatile synchronized native strictfp
 ```
 
-#### 大括号问题
+#### 2.2 大括号问题
 将大括号与起始语句放在同一行
 ```java
 if (hasSomething()) {
@@ -167,7 +167,7 @@ if (hasSomething())
     body();  // bad!
 ```
 
-#### 空格问题
+#### 2.3 空格问题
 if else | while | 运算符两端 等后面需用空格隔开。例如：
 
 规范的编写方式：
@@ -196,7 +196,7 @@ for(int i=0; i<10;i++){
 }
 ```
 
-#### 枚举类
+#### 2.4 枚举类
 枚举常量间用逗号隔开，换行可选。
 
 没有方法和文档的枚举类可写成数组初始化的格式：
@@ -205,11 +205,11 @@ private enum Suit { CLUBS, HEARTS, SPADES, DIAMONDS }
 ```
 由于枚举类也是一个类，因此所有适用于其它类的格式规则也适用于枚举类。
 
-#### 变量声明
+#### 2.5 变量声明
 - 每次只声明一个变量。不要使用组合声明，比如int a, b;。
 - 需要时才声明，并尽快进行初始化。不要在一个代码块的开头把局部变量一次性都声明了(这是c语言的做法)，而是在第一次需要使用它时才声明。 局部变量在声明时最好就进行初始化，或者声明后尽快进行初始化。
 
-#### 数组
+#### 2.6 数组
 - 数组初始化可以写成块状结构，比如，下面的写法都是OK的：
 ```java
 new int[] {
@@ -232,7 +232,7 @@ new int[]{0, 1, 2, 3}
 ```
 - 非C风格的数组声明。中括号是类型的一部分：String[] args， 而非String args[]。
 
-#### switch语句
+#### 2.7 switch语句
 **术语说明：**switch块的大括号内是一个或多个语句组。每个语句组包含一个或多个switch标签(case FOO:或default:)，后面跟着一条或多条语句。
 - 缩进。与其它块状结构一致，switch块中的内容缩进为2个空格。每个switch标签后新起一行，再缩进2个空格，写下一条或多条语句。
 - Fall-through：注释
@@ -252,14 +252,14 @@ switch (input) {
 ```
 -  default的情况要写出来。每个switch语句都包含一个default语句组，即使它什么代码也不包含。
 
-#### 方法参数
+#### 2.8 方法参数
 1. 当方法参数数量过多时，需进行换行处理。
 2. 尽量不要让方法参数超过五个，超过五个以上可以考虑用一个类来封装。
 3. 除非只有一个参数，尽量不要使用boolean作为方法参数
 4. 如果需要传的参数是Android的资源文件ID，那么需要加上注解。
 Drawable使用```@DrawableRes```，Color使用```@ColorRes```，Dimension使用```@DimenRes```，String使用```@StringRes```。
 
-#### 使用标准的Java Annotation
+#### 2.9 使用标准的Java Annotation
 Annotation应该位于Java语言元素的其它修饰符之前。 简单的marker annotation（@Override等）可以和语言元素放在同一行。 如果存在多个annotation，或者annotation是参数化的，则应按字母顺序各占一行来列出。
 
 对于Java 内建的三种annotation，Android标准的实现如下
@@ -275,7 +275,7 @@ List<String> blix = Utility.rotate(blax);
 ```
 如果需要使用@SuppressWarnings annotation，应该重新组织一下代码，把需要应用annotation的语言元素独立出来。
 
-#### 使用TODO注释
+#### 2.10 使用TODO注释
 对那些临时性的、短期的、够棒但不完美的代码，请使用TODO注释。
 TODO注释应该包含全部大写的TODO，后跟一个冒号：
 ```java
@@ -287,7 +287,7 @@ TODO注释应该包含全部大写的TODO，后跟一个冒号：
 ```
 如果TODO注释是“将来要做某事”的格式，则请确保包含一个很明确的日期（“在2005年11月会修正”），或是一个很明确的事件（“在所有代码整合人员理解了V7协议之后删除本段代码”）。
 
-#### 静态成员
+#### 2.11 静态成员
 使用类名调用静态的类成员，而不是具体某个对象或表达式。
 ```java
 Foo aFoo = ...;
@@ -296,11 +296,11 @@ aFoo.aStaticMethod(); // bad
 somethingThatYieldsAFoo().aStaticMethod(); // very bad
 ```
 
-#### Finalizers: 禁用
+#### 2.12 Finalizers: 禁用
 极少会去重写Object.finalize。
 Tip：不要使用finalize。如果你非要使用它，请先仔细阅读和理解Effective Java 第7条款：“Avoid Finalizers”，然后不要使用它。
 
-#### 限制代码行的长度
+#### 2.13 限制代码行的长度
 每行代码的长度应该不超过100个字符。
 
 有关本规则的讨论有很多，最后的结论还是最多不超过100个字符。
@@ -309,10 +309,10 @@ Tip：不要使用finalize。如果你非要使用它，请先仔细阅读和理
 
 例外：import行可以超过限制，因为很少有人会去阅读它。这也简化了编程工具的写入操作。
 
-#### 编写简短的方法
+#### 2.14 编写简短的方法
 为了把规模控制在合理范围内，方法应该保持简短和重点突出。不过，有时较长的方法也是合适的，所以对方法的代码长度并没有硬性的限制。如果方法代码超过了40行，就该考虑是否可以在不损害程序结构的前提下进行分拆。
 
-#### 限制变量的作用范围
+#### 2.15 限制变量的作用范围
 局部变量的作用范围应该是限制为最小的（Effective Java第29条）。使用局部变量，可以增加代码的可读性和可维护性，并且降低发生错误的可能性。每个变量都应该在最小范围的代码块中进行声明，该代码块的大小只要能够包含所有对该变量的使用即可。
 
 应该在第一次用到局部变量的地方对其进行声明。几乎所有局部变量声明都应该进行初始化。如果还缺少足够的信息来正确地初始化变量，那就应该推迟声明，直至可以初始化为止。
@@ -365,7 +365,7 @@ for (Iterator i = c.iterator(); i.hasNext(); ) {
 }
 ```
 
-#### 捕获的异常
+#### 2.16 捕获的异常
 有时，完全忽略异常是非常诱人的，比如：
 ```java
 void setServerPort(String value) {
