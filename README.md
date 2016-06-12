@@ -71,10 +71,39 @@ widget layout： ```widget_{名称}``` 例如：```widget_shopping_detail.xml```
 
 测试类的命名以它要测试的类的名称开始，以Test结束。例如，HashTest或HashIntegrationTest。
 
-#### 方法名与变量名规范
+#### 方法名规范
 以小驼峰式命名法(lowerCamelCase)风格编写。
 
-除了第一个单词，每个单词的第一个字母都大写 如:```xmlHttpRequest```
+除了第一个单词，每个单词的第一个字母都大写 如:
+
+```java
+public void method(){
+}
+```
+
+#### 常量名规范
+常量名命名模式为CONSTANT_CASE，全部字母大写，用下划线分隔单词。那，到底什么算是一个常量？
+
+每个常量都是一个静态final字段，但不是所有静态final字段都是常量。在决定一个字段是否是一个常量时， 考虑它是否真的感觉像是一个常量。例如，如果任何一个该实例的观测状态是可变的，则它几乎肯定不会是一个常量。 只是永远不打算改变对象一般是不够的，它要真的一直不变才能将它示为常量。
+```java
+// Constants
+static final int NUMBER = 5;
+static final ImmutableList<String> NAMES = ImmutableList.of("Ed", "Ann");
+static final Joiner COMMA_JOINER = Joiner.on(',');  // because Joiner is immutable
+static final SomeMutableType[] EMPTY_ARRAY = {};
+enum SomeEnum { ENUM_CONSTANT }
+
+// Not constants
+static String nonFinal = "non-final";
+final String nonStatic = "non-static";
+static final Set<String> mutableCollection = new HashSet<String>();
+static final ImmutableSet<SomeMutableType> mutableElements = ImmutableSet.of(mutable);
+static final Logger logger = Logger.getLogger(MyClass.getName());
+static final String[] nonEmptyArray = {"these", "can", "change"};
+```
+
+#### 成员变量名规范
+以小驼峰式命名法(lowerCamelCase)风格编写。
 
 静态成员变量用s开头。例如：
 ```java 
@@ -89,6 +118,23 @@ Model类的私有成员变量不加前缀。例如：
 private String name;
 ```
 
+#### 局部变量名规范
+以小驼峰式命名法(lowerCamelCase)风格编写。
+
+除了第一个单词，每个单词的第一个字母都大写 如:
+```java
+String name = "a";
+int id = 1;
+```
+
+
+#### Modifiers
+类和成员的modifiers如果存在，则按Java语言规范中推荐的顺序出现。
+```java
+public protected private abstract static final transient volatile synchronized native strictfp
+```
+
+
 #### 大括号问题
 将大括号与起始语句放在同一行
 ```java
@@ -98,6 +144,15 @@ if (hasSomething()) {
  
 }
 ```
+就算if或for语句只有一行也必须加大括号
+不要这样写：
+```java
+if (isEmpty())
+ empty... 
+else
+ something...
+```
+
 #### 空格问题
 if else | while | 运算符两端 等后面需用空格隔开。例如：
 
@@ -133,3 +188,4 @@ for(int i=0; i<10;i++){
 3. 除非只有一个参数，尽量不要使用boolean作为方法参数
 4. 如果需要传的参数是Android的资源文件ID，那么需要加上注解。
 Drawable使用```@DrawableRes```，Color使用```@ColorRes```，Dimension使用```@DimenRes```，String使用```@StringRes```。
+
