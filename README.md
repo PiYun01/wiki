@@ -3,8 +3,9 @@
 正在编写中...
 ## Android编码风格
 本文参考[Hawstein翻译的Google Java编程风格指南](http://www.hawstein.com/posts/google-java-style.html)、[Android开源项目-编码风格规范-Code Style Guidelines for Contributors](http://blog.sina.com.cn/s/blog_48d491300100zwzg.html#use-todo-comments)、[最佳实践之Android代码规范](http://www.androidchina.net/2141.html)
-### 1 命名规范
 
+### 1 命名规范
+#### *统一使用UTF-8编码，避免乱码问题。*
 #### 1.1 文件名命名规范
 源文件以其最顶层的类名来命名，大小写敏感，文件扩展名为.java。  
 activity的文件：```{名称}Activity``` 例如：```mainActivity.java```
