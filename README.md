@@ -4,7 +4,7 @@
 ## 推荐阅读的书籍列表
 - Java
  * 《Thinking in java》
- * 《effective java》
+ * 《Effective java》
  * 《深入理解Java虚拟机》
  * 《Java并发编程的艺术》
 - Android
