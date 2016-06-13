@@ -14,6 +14,7 @@
 - [1.7 常量名规范](https://github.com/yx123lan/wiki/blob/master/README.md#17-常量名规范)
 - [1.8 成员变量名规范](https://github.com/yx123lan/wiki/blob/master/README.md#18-成员变量名规范)
 - [1.9 局部变量名规范](https://github.com/yx123lan/wiki/blob/master/README.md#19-局部变量名规范)
+
 [2 具体结构](https://github.com/yx123lan/wiki/blob/master/README.md#2-具体结构)
 - [2.1 Modifiers](https://github.com/yx123lan/wiki/blob/master/README.md#21-Modifiers)
 - [2.2 大括号问题](https://github.com/yx123lan/wiki/blob/master/README.md#22-大括号问题)
@@ -23,6 +24,7 @@
 - [2.6 数组](https://github.com/yx123lan/wiki/blob/master/README.md#26-数组)
 - [2.7 switch语句](https://github.com/yx123lan/wiki/blob/master/README.md#27-switch语句范)
 - [2.8 方法参数](https://github.com/yx123lan/wiki/blob/master/README.md#28-方法参数)
+
 [3 编程实践](https://github.com/yx123lan/wiki/blob/master/README.md#3-编程实践)
 - [3.1 Modifiers](https://github.com/yx123lan/wiki/blob/master/README.md#31-使用标准的Java Annotation)
 - [3.2 使用TODO注释](https://github.com/yx123lan/wiki/blob/master/README.md#32-使用TODO注释)
