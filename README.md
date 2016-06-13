@@ -190,9 +190,9 @@ if (condition) body();
 不要这样写：
 ```java
 if (isEmpty())
- empty... 
+    empty... 
 else
- something...
+    something...
 ```
 或
 ```java
@@ -387,9 +387,7 @@ s.addAll(Arrays.asList(args));
 除非理由十分充分，否则循环变量都应该在for语句内进行声明，：
 ```java
 for (int i = 0; i n; i++) {
-
     doSomething(i);
-
 }
 ```
 和
@@ -462,8 +460,8 @@ return handleTextResponse(response);
 例外：在测试中，如果一个捕获的异常被命名为expected，则它可以被不加注释地忽略。下面是一种非常常见的情形，用以确保所测试的方法会抛出一个期望中的异常， 因此在这里就没有必要加注释。
 ```java
 try {
-  emptyStack.pop();
-  fail();
+    emptyStack.pop();
+    fail();
 } catch (NoSuchElementException expected) {
 }
 ```
