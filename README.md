@@ -5,7 +5,7 @@
 本文参考[Hawstein翻译的Google Java编程风格指南](http://www.hawstein.com/posts/google-java-style.html)、[Android开源项目-编码风格规范-Code Style Guidelines for Contributors](http://blog.sina.com.cn/s/blog_48d491300100zwzg.html#use-todo-comments)、[最佳实践之Android代码规范](http://www.androidchina.net/2141.html)
 ### 目录
 [1 命名规范](https://github.com/yx123lan/wiki/blob/master/README.md#1-命名规范)
-- [1.1 Drawable文件命名](https://github.com/yx123lan/wiki/blob/master/README.md#11-文件名命名规范)
+- [1.1 文件名命名规范](https://github.com/yx123lan/wiki/blob/master/README.md#11-文件名命名规范)
 - [1.2 资源ID命名规范](https://github.com/yx123lan/wiki/blob/master/README.md#12-资源id命名规范)
 - [1.3 Drawable文件命名](https://github.com/yx123lan/wiki/blob/master/README.md#13-drawable文件命名)
 - [1.4 包命名规范](https://github.com/yx123lan/wiki/blob/master/README.md#14-包命名规范)
@@ -22,19 +22,19 @@
 - [2.4 枚举类](https://github.com/yx123lan/wiki/blob/master/README.md#24-枚举类)
 - [2.5 变量声明](https://github.com/yx123lan/wiki/blob/master/README.md#25-变量声明)
 - [2.6 数组](https://github.com/yx123lan/wiki/blob/master/README.md#26-数组)
-- [2.7 switch语句](https://github.com/yx123lan/wiki/blob/master/README.md#27-switch语句范)
+- [2.7 switch语句](https://github.com/yx123lan/wiki/blob/master/README.md#27-switch语句)
 - [2.8 方法参数](https://github.com/yx123lan/wiki/blob/master/README.md#28-方法参数)
 
 [3 编程实践](https://github.com/yx123lan/wiki/blob/master/README.md#3-编程实践)
-- [3.1 Modifiers](https://github.com/yx123lan/wiki/blob/master/README.md#31-使用标准的java-annotation)
+- [3.1 使用标准的java-annotation](https://github.com/yx123lan/wiki/blob/master/README.md#31-使用标准的java-annotation)
 - [3.2 使用TODO注释](https://github.com/yx123lan/wiki/blob/master/README.md#32-使用todo注释)
 - [3.3 静态成员](https://github.com/yx123lan/wiki/blob/master/README.md#33-静态成员)
-- [3.4 Finalizers: 禁用](https://github.com/yx123lan/wiki/blob/master/README.md#34-finalizers-禁用)
+- [3.4 finalizers-禁用](https://github.com/yx123lan/wiki/blob/master/README.md#34-finalizers-禁用)
 - [3.5 限制代码行的长度](https://github.com/yx123lan/wiki/blob/master/README.md#35-限制代码行的长度)
 - [3.6 编写简短的方法](https://github.com/yx123lan/wiki/blob/master/README.md#36-编写简短的方法)
 - [3.7 限制变量的作用范围](https://github.com/yx123lan/wiki/blob/master/README.md#37-限制变量的作用范围)
 - [3.8 捕获的异常](https://github.com/yx123lan/wiki/blob/master/README.md#38-捕获的异常)
-- [3.9 Log的使用](https://github.com/yx123lan/wiki/blob/master/README.md#39-log的使用)
+- [3.9 log的使用](https://github.com/yx123lan/wiki/blob/master/README.md#39-log的使用)
 
 ### 1 命名规范
 #### *统一使用UTF-8编码，避免乱码问题。*
