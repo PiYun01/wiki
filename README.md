@@ -1,6 +1,25 @@
 # wiki
 ## 开发环境配置
 正在编写中...
+## 推荐阅读的书籍列表
+- Java
+ * 《Thinking in java》
+ * 《effective java》
+ * 《深入理解Java虚拟机》
+ * 《Java并发编程的艺术》
+- Android
+ * 低难度
+  - 《Android4高级编程》
+ * 中难度
+  - 《Android C++高级编程 使用NDK》
+  - 《Android应用性能优化》
+  - 《Android开发高手进阶》
+  - 《深入理解Android 卷3》
+  - 《Android群英传》
+  - 《SQLite权威指南（第2版）》
+ * 高难度
+  - 《Android的设计与实现 卷1》
+
 ## Android编码风格
 本文参考[Hawstein翻译的Google Java编程风格指南](http://www.hawstein.com/posts/google-java-style.html)、[Android开源项目-编码风格规范-Code Style Guidelines for Contributors](http://blog.sina.com.cn/s/blog_48d491300100zwzg.html#use-todo-comments)、[最佳实践之Android代码规范](http://www.androidchina.net/2141.html)
 ### 目录
